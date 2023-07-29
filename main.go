@@ -20,9 +20,9 @@ func main() {
 	r.HandleFunc("/ws/getRooms", manager.GetRooms).Methods("GET")
 
 	//Aqui esta la magia del ws
-	r.HandleFunc("/ws/joinRoom/{RoomId}", manager.JoinRoom).Methods("GET")
+	r.HandleFunc("/ws/joinRoom/{roomId}", manager.JoinRoom).Methods("GET")
 
-	log.Println("The serve is running on port 8080")
+	log.Println("The server is running on port 8080")
 	log.Fatal( http.ListenAndServe(":8080", r) )	
 }
 

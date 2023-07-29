@@ -92,6 +92,7 @@ func (h *Manager) GetRooms(w http.ResponseWriter, r *http.Request) {
 
 // // La magia esta en esta parte, aqui se hace la conexion y se hace la conexion con el hub.
 func (h *Manager) JoinRoom(w http.ResponseWriter, r *http.Request) {
+	fmt.Print("New connection")
 	conn, err := upgrader.Upgrade(w, r, nil)
 	if err != nil {
 		log.Print("upgrade:", err)
